@@ -13,6 +13,7 @@ module Exercise
 
       # Написать свою функцию my_map
       def my_map
+        my_reduce(self.class.new) { |result, val| result.push(yield(val)) }
       end
 
       # Написать свою функцию my_compact
