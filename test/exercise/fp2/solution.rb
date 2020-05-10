@@ -18,6 +18,7 @@ module Exercise
 
       # Написать свою функцию my_compact
       def my_compact
+        my_reduce(self.class.new) { |result, val| val.nil? ? result : result.push(val) }
       end
 
       # Написать свою функцию my_reduce
