@@ -2,8 +2,7 @@ module Exercise
   module Arrays
     class << self
       def replace(array)
-        max_val = array[0]
-        array.each { |val| max_val = val if val > max_val }
+        max_val = array.reduce(array.first) { |max, val| val > max ? val : max }
         array.map { |val| val.positive? ? max_val : val }
       end
 
