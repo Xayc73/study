@@ -11,8 +11,7 @@ module Exercise
       end
 
       def chars_count(films, threshold)
-        map_array = films.reject { |film| film['rating_kinopoisk'].nil? }
-                         .select { |film| film['rating_kinopoisk'].to_f >= threshold }
+        map_array = films.select { |film| film['rating_kinopoisk'].to_f >= threshold }
                          .map { |film| film['name'].count('и') }
         map_array.reduce(:+)
       end
